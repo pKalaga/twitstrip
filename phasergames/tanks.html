@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="./lib/phaser.min.js"></script>
+    <script src="./tanks.js"></script>
+
+  </head>
+  <body>
+    <div id="game"></div>
+  	<div id="orientation"></div>
+
+  <script type="text/javascript">
+  window.onload = function () {
+      var game = new Phaser.Game(512, 384, Phaser.CANVAS, 'game');
+      game.state.add('Boot', Tanks.Boot);
+      game.state.add('Preloader', Asteroids.Preloader);
+      game.state.add('MainMenu', Asteroids.MainMenu);
+      game.state.add('Game', Asteroids.Game);
+      game.state.start('Boot');
+  }
+  </script>
+  </body>
+</html>
